@@ -1,3 +1,4 @@
+import { DataService } from './data.service';
 /* eslint-disable max-len */
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -15,10 +16,10 @@ export class AppComponent implements OnInit {
 
   data: Article[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private datasvc: DataService) { }
 
   ngOnInit(): void {
-    this.http.get<Article[]>('/api/articles.json').subscribe(results => {
+    this.datasvc.loadArticles().subscribe(results => {
       this.data = results;
     });
   }
