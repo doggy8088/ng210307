@@ -12,5 +12,12 @@ export class AppComponent {
 
   doSearch(value: string) {
     this.data.keyword = value;
+
+    if (!value) {
+      this.data.keyword = ' ';
+      setTimeout(() => {
+        this.data.keyword = '';
+      }, 1);
+    }
   }
 }
