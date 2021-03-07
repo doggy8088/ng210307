@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Article } from './Article';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,12 @@ export class AppComponent implements OnInit {
     keyword: 'demo1'
   };
 
-  data: any[] = [];
+  data: Article[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<any[]>('/api/articles.json').subscribe(results => {
+    this.http.get<Article[]>('/api/articles.json').subscribe(results => {
       this.data = results;
     });
   }
