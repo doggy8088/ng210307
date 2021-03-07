@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { RecentCommentsComponent } from './footer/recent-comments/recent-comments.component';
+import { MaskPipe } from './mask.pipe';
 
 @NgModule({
   declarations: [
     FooterComponent,
     AppComponent,
     HeaderComponent,
-    RecentCommentsComponent
+    RecentCommentsComponent,
+    MaskPipe
   ],
   imports: [
     BrowserModule,
