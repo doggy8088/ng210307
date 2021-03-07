@@ -11,7 +11,6 @@ export class AppComponent {
     keyword: 'demo1'
   };
 
-
   data = [
     {
       id: 1,
