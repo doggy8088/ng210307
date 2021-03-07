@@ -9,4 +9,8 @@ export class AppComponent {
   data = {
     keyword: 'demo1'
   };
+
+  doSearch(value: string) {
+    this.data.keyword = value;
+  }
 }
