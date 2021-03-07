@@ -93,12 +93,12 @@
           <div class="widget-content">
             <div id="searchbox">
               <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s"
-                     [value]="data.keyword"
+                     [value]="search.keyword"
                      #tKeyword
                      (keyup.enter)="doSearch(tKeyword.value)"
                      (keyup.escape)="doSearch('', tKeyword)">
               <input type="button" value="搜尋" (click)="doSearch(tKeyword.value)">
-              {{ data | json }}
+              {{ search | json }}
             </div>
           </div>
         </div>
