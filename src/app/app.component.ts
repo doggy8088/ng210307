@@ -3,6 +3,7 @@ import { DataService } from './data.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Article } from './Article';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,14 +15,12 @@ export class AppComponent implements OnInit {
     keyword: 'demo1'
   };
 
-  data: Article[] = [];
+  data$: Observable<Article[]> = of([]);
 
   constructor(private datasvc: DataService) { }
 
   ngOnInit(): void {
-    this.datasvc.loadArticles().subscribe(results => {
-      this.data = results;
-    });
+    this.data$ = this.datasvc.loadArticles();
   }
 
   doSearch(value: string, elm?: HTMLInputElement) {
