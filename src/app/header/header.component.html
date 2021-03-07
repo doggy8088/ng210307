@@ -28,7 +28,9 @@
            [attr.data-aaaaaa]="sitename" (click)="changeName($event)">
       <div class="pull-left">
         <h1><a href="http://blog.miniasp.com/">{{ sitename }}</a></h1>
-        <h3 [ngStyle]="{'font-size': counter + 'px' }">{{ subtitle }} {{ counter }}</h3>
+        <h3 [style.font-size.px]="counter"
+            [class.highlight]="counter % 2 == 0"
+        >{{ subtitle }} {{ counter }}</h3>
       </div>
       <div id="social-icons" class="pull-right social-icon">
         <a href="https://www.facebook.com/will.fans" title="Will 保哥的技術交流中心" target="_blank">
