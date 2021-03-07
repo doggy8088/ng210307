@@ -29,4 +29,8 @@ export class AppComponent implements OnInit {
       elm.value = '';
     }
   }
+
+  deleteArticle(id: number) {
+    console.log('刪除 id = ' + id + ' 的文章');
+  }
 }
