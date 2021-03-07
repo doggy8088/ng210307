@@ -96,7 +96,7 @@
                      [value]="data.keyword"
                      #tKeyword
                      (keyup.enter)="doSearch(tKeyword.value)"
-                     (keyup.escape)="doSearch('')">
+                     (keyup.escape)="doSearch('', tKeyword)">
               <input type="button" value="搜尋" (click)="doSearch(tKeyword.value)">
               {{ data | json }}
             </div>

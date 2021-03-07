@@ -10,14 +10,10 @@ export class AppComponent {
     keyword: 'demo1'
   };
 
-  doSearch(value: string) {
+  doSearch(value: string, elm?: HTMLInputElement) {
     this.data.keyword = value;
-
-    if (!value) {
-      this.data.keyword = ' ';
-      setTimeout(() => {
-        this.data.keyword = '';
-      }, 1);
+    if (elm && !value) {
+      elm.value = '';
     }
   }
 }
