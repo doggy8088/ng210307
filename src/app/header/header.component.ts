@@ -9,7 +9,9 @@ export class HeaderComponent implements OnInit {
 
   sitename = 'Hello World';
   sitelogo = '/assets/images/logo.png';
-  subtitle = '<mark>記載著 Will 在網路世界的學習心得與技術分享</mark>';
+  subtitle = '記載著 Will 在網路世界的學習心得與技術分享';
+
+  counter = 10;
 
   constructor() { }
 
@@ -20,6 +22,7 @@ export class HeaderComponent implements OnInit {
   }
 
   changeName($event: MouseEvent) {
+    this.counter++;
     console.log($event);
     if ($event.ctrlKey) {
       this.sitename = 'The Will Will Web';
